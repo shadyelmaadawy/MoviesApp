@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [ weak window ] in
             let homeViewController = HomeViewConfigrator.createHomeVC()
             window?.rootViewController = UINavigationController(rootViewController: homeViewController)
+            
             self.handleURL(connectionOptions.urlContexts)
         }
     }
