@@ -18,10 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = SplashScreenViewController()
         window?.makeKeyAndVisible()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [ weak window ] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
             let homeViewController = HomeViewConfigrator.createHomeVC()
-            window?.rootViewController = UINavigationController(rootViewController: homeViewController)
-            
+            self.window?.rootViewController = UINavigationController(rootViewController: homeViewController)
             self.handleURL(connectionOptions.urlContexts)
         }
     }
