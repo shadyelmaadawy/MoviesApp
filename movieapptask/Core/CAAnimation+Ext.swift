@@ -15,5 +15,15 @@ extension CAAnimation {
         baseAnimation.type = .fade
         return baseAnimation
     }
+    
+    class var fadeInOutAnimation: CAKeyframeAnimation {
+        let baseAnimation = CAKeyframeAnimation()
+        baseAnimation.duration = 1.25
+        baseAnimation.autoreverses = true
+        baseAnimation.values = [1.0, 0.8, 0.6, 0.4, 0.2, 0.1]
+        baseAnimation.fillMode = CAMediaTimingFillMode.both
+        baseAnimation.repeatCount = .greatestFiniteMagnitude
+        return baseAnimation
+    }
 
 }

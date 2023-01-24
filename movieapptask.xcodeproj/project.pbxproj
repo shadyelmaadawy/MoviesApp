@@ -44,6 +44,7 @@
 		6178989B297747F400426B66 /* SeparatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6178989A297747F400426B66 /* SeparatorLine.swift */; };
 		6178989D29774F8F00426B66 /* NSAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6178989C29774F8F00426B66 /* NSAttributedString+Ext.swift */; };
 		6178989F2977687700426B66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6178989E2977687700426B66 /* GoogleService-Info.plist */; };
+		61E759BB29801FE200965778 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E759BA29801FE200965778 /* SplashScreenViewController.swift */; };
 		61FDBD722975A39600344F01 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBD712975A39600344F01 /* HomeInteractor.swift */; };
 		61FDBD742975A3A400344F01 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBD732975A3A400344F01 /* HomePresenter.swift */; };
 		61FDBD762975A3AC00344F01 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBD752975A3AC00344F01 /* HomeRouter.swift */; };
@@ -57,7 +58,6 @@
 		61FDBDA82975F1F700344F01 /* CAAnimation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBDA72975F1F700344F01 /* CAAnimation+Ext.swift */; };
 		61FDBDAA2975F20D00344F01 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBDA92975F20D00344F01 /* URLImageView.swift */; };
 		61FDBDAC2975F6D600344F01 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBDAB2975F6D600344F01 /* LoadingIndicator.swift */; };
-		61FDBDB7297667CE00344F01 /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDBDB6297667CE00344F01 /* URLRequest+Ext.swift */; };
 		A86E89455ACB2744AC569565 /* Pods_movieapptask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2588269C378482140BAFC419 /* Pods_movieapptask.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +104,7 @@
 		6178989C29774F8F00426B66 /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
 		6178989E2977687700426B66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		617898A029776B5F00426B66 /* movieapptask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = movieapptask.entitlements; sourceTree = "<group>"; };
+		61E759BA29801FE200965778 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		61FDBD712975A39600344F01 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		61FDBD732975A3A400344F01 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		61FDBD752975A3AC00344F01 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		61FDBDA72975F1F700344F01 /* CAAnimation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAnimation+Ext.swift"; sourceTree = "<group>"; };
 		61FDBDA92975F20D00344F01 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		61FDBDAB2975F6D600344F01 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
-		61FDBDB6297667CE00344F01 /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
 		A6AC766F9C0D5DABEAB84478 /* Pods-movieapptask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieapptask.release.xcconfig"; path = "Target Support Files/Pods-movieapptask/Pods-movieapptask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,7 +194,6 @@
 				6108039129746BC800E024D6 /* UIImage+Ext.swift */,
 				6108038D29746B6C00E024D6 /* UIView+Ext.swift */,
 				61FDBDA72975F1F700344F01 /* CAAnimation+Ext.swift */,
-				61FDBDB6297667CE00344F01 /* URLRequest+Ext.swift */,
 				6178989C29774F8F00426B66 /* NSAttributedString+Ext.swift */,
 			);
 			path = Core;
@@ -254,6 +253,7 @@
 		610803A92974837C00E024D6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				61E759B929801FCD00965778 /* Splash Screen */,
 				6178987029771B2700426B66 /* Details */,
 				610803AD297483AF00E024D6 /* Home */,
 			);
@@ -325,6 +325,14 @@
 				6178988E297731C500426B66 /* PopularMoviesEndPoint.swift */,
 			);
 			path = "End Points";
+			sourceTree = "<group>";
+		};
+		61E759B929801FCD00965778 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				61E759BA29801FE200965778 /* SplashScreenViewController.swift */,
+			);
+			path = "Splash Screen";
 			sourceTree = "<group>";
 		};
 		61FDBD702975A37800344F01 /* Model */ = {
@@ -524,6 +532,7 @@
 				6178987A29771BC700426B66 /* DetailsProtocols.swift in Sources */,
 				610803A62974772C00E024D6 /* Logger.swift in Sources */,
 				6178989729773BF100426B66 /* BaseUIStackView.swift in Sources */,
+				61E759BB29801FE200965778 /* SplashScreenViewController.swift in Sources */,
 				61080374297455AD00E024D6 /* AppDelegate.swift in Sources */,
 				61080376297455AD00E024D6 /* SceneDelegate.swift in Sources */,
 				61FDBDA12975DC1800344F01 /* NSObject+Ext.swift in Sources */,
@@ -531,7 +540,6 @@
 				6108039829746F7500E024D6 /* BaseUILabel.swift in Sources */,
 				6178987829771BBE00426B66 /* DetailsInteractor.swift in Sources */,
 				61FDBDA62975DE3700344F01 /* HomeViewController+Delegates.swift in Sources */,
-				61FDBDB7297667CE00344F01 /* URLRequest+Ext.swift in Sources */,
 				61FDBDAA2975F20D00344F01 /* URLImageView.swift in Sources */,
 				617898992977439100426B66 /* MovieDetailsSubView.swift in Sources */,
 				61FDBD742975A3A400344F01 /* HomePresenter.swift in Sources */,

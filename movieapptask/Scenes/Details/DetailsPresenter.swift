@@ -36,6 +36,7 @@ final class DetailsPresenter: DetailsPresenterProtocol, DetailsInteractorOutputP
     
     func movieDetailsFetchedFailed(withError baseError: Error) {
         DispatchQueue.main.async {
+            debugPrint(baseError)
             self.view?.showError(withError: baseError, dismissView: true)
         }
         

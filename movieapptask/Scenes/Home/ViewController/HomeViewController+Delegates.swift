@@ -9,9 +9,16 @@ import Foundation
 
 extension HomeViewController: HomeViewProtocol {
     
-    func popularMoviesFetchedSuccessfully() {
-        self.popularMoviesCollectionView.reloadData()
+    func popularMoviesFetchedSuccessfully(_ indexPaths: [IndexPath]?) {
         self.popularMoviesCollectionView.stopAnimating()
+        guard let indexPaths = indexPaths else {
+            self.popularMoviesCollectionView.reloadData()
+            return
+        }
+        self.popularMoviesCollectionView.performBatchUpdates { [ weak self] in
+            guard let self = self else { return }
+            self.popularMoviesCollectionView.insertItems(at: indexPaths)
+        }
     }
     
 }

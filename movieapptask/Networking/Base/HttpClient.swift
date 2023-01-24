@@ -33,9 +33,33 @@ final class HttpClient {
         }
     }
     
+    class func makeURLRequest(_ endpoint: ApiEndPoint) throws -> URLRequest {
+        var urlComponents            = URLComponents()
+        urlComponents.scheme         = endpoint.scheme.rawValue
+        urlComponents.host           = endpoint.host.rawValue
+        urlComponents.path           = endpoint.path.rawValue
+        switch(endpoint) {
+            case is MoviePosterEndPoint:
+                urlComponents.path       = endpoint.path.rawValue + endpoint.query!
+            case is MovieDetailsEndPoint:
+                urlComponents.queryItems = endpoint.parameters
+                urlComponents.path       = endpoint.path.rawValue + endpoint.query!
+            default:
+                urlComponents.queryItems = endpoint.parameters
+        }
+        guard let baseURL = urlComponents.url else {
+            throw HttpClient.httpClientErrorCode.invalidURL
+        }
+        var urlRequst                = URLRequest(url: baseURL)
+        urlRequst.httpMethod         = endpoint.method.rawValue
+        urlRequst.networkServiceType = .responsiveData
+        urlRequst.cachePolicy        = .reloadIgnoringLocalAndRemoteCacheData
+        return urlRequst
+    }
+    
     func makeHttpRequest(endpoint: ApiEndPoint, handler: @escaping(Result<Data, Error>) -> ()) {
         do {
-            let urlRequest = try HttpClient.makeURLRequest(endpoint)
+            let urlRequest = try Self.makeURLRequest(endpoint)
             URLSession.init(configuration: .default).dataTask(with: urlRequest) { [weak logger] networkData, networkResponse, networkError in
                 guard let logger = logger else { return }
                 guard networkError == nil else {

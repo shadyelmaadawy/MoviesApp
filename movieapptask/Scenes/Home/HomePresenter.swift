@@ -49,11 +49,21 @@ extension HomePresenter {
         }
     }
     
-    func popularMoviesFetchedSuccessfully( movies: [PopularMovieModel], isReachEnd: Bool) {
+    func popularMoviesFetchedSuccessfully(movies: [PopularMovieModel], isReachEnd: Bool) {
+        self.popularMoviesIsReachEnd = isReachEnd
+        let startIndex = self.popularMovies.isEmpty ? 0 : self.popularMoviesQuantity
         self.popularMovies.append(contentsOf: movies)
         DispatchQueue.main.async {
             self.popularMoviesIsFetching.toggle()
-            self.view?.popularMoviesFetchedSuccessfully()
+            if(startIndex > 0) {
+                var indexPaths: [IndexPath] = .init()
+                for i in (startIndex - movies.count)...startIndex {
+                    indexPaths.append(IndexPath(row: i, section: 0))
+                }
+                self.view?.popularMoviesFetchedSuccessfully(indexPaths)
+            } else {
+                self.view?.popularMoviesFetchedSuccessfully(nil)
+            }
         }
     }
     

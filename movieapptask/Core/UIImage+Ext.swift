@@ -10,6 +10,7 @@ import UIKit
 extension UIImage {
     
     enum baseImageNames: String {
+        case logo = "Logo"
         case rating = "star.fill"
         case date = "clock.fill"
         case count = "person.fill"

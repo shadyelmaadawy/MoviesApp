@@ -15,10 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let homeViewController = HomeViewConfigrator.createHomeVC()
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: homeViewController)
+        window?.rootViewController = SplashScreenViewController()
         window?.makeKeyAndVisible()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [ weak window ] in
+            let homeViewController = HomeViewConfigrator.createHomeVC()
+            window?.rootViewController = UINavigationController(rootViewController: homeViewController)
+        }
         self.handleURL(connectionOptions.urlContexts)
     }
     
@@ -30,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let baseURL = urlContexts.first,
               let baseHost = baseURL.url.host else { return }
         logger.debug(buffer: baseURL)
-        if(baseURL.url.pathComponents.count == 2) {
+        if(baseURL.url.pathComponents.isEmpty == false && baseURL.url.pathComponents.count == 2) {
             switch(baseHost) {
                 case "details_screen":
                     guard let movieIndex = Int(baseURL.url.pathComponents[1]),

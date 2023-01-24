@@ -9,7 +9,6 @@ import UIKit
 
 struct MovieDetailsModel: Codable {
     let id: Int
-    let imdbID: String
     let originalLanguage: String
     let originalTitle: String
     let title: String
@@ -22,7 +21,6 @@ struct MovieDetailsModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case imdbID = "imdb_id"
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case title

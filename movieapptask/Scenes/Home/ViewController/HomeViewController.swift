@@ -21,6 +21,7 @@ final class HomeViewController: BaseUIViewController {
     
     private(set) lazy var popularMoviesCollectionView: BaseUICollectionView = {
         let baseCollectionView = BaseUICollectionView(perRow: 2)
+        baseCollectionView.isPagingEnabled = true
         baseCollectionView.register(MovieCollectionViewCell.self)
         baseCollectionView.setDelegates(self)
         baseCollectionView.setDataSource(self)

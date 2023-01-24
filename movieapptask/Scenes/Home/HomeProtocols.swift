@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtocol! { get set }
-    func popularMoviesFetchedSuccessfully()
+    func popularMoviesFetchedSuccessfully(_ indexPaths: [IndexPath]?)
 }
 typealias HomeViewDelegates = HomeViewProtocol & BaseUIViewControllerDelegates
 
