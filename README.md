@@ -1,6 +1,6 @@
 
-# MovieAppTask
-  Received Some days ago a task, based on themoviedb RESTful API.
+# MovieApp
+  Based on themoviedb RESTful API.
   
   As usual, Here we go!
 
