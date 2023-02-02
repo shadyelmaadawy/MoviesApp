@@ -1,5 +1,5 @@
 
-# MovieApp
+# MoviesApp
   Based on themoviedb RESTful API.
   
   As usual, Here we go!
